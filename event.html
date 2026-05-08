@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>تفاصيل الفعالية</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+
+            <a class="navbar-brand fw-bold text-white">
+ دليل الفعاليات
+</a>
+
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">الرئيسية</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="events.html">الفعاليات</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">عن الدليل</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">اتصل بنا</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <div class="container mt-5">
+
+        <h2 id="eventTitle"></h2>
+
+        <img id="eventImage" class="img-fluid rounded shadow" style="max-height:500px;width:100%;object-fit:cover;">
+
+        <p class="mt-4 fs-5" id="eventDesc"></p>
+
+        <p>
+            <strong>التاريخ:</strong>
+            <span id="eventDate"></span>
+        </p>
+
+        <p>
+            <strong>المكان:</strong>
+            <span id="eventPlace"></span>
+        </p>
+
+        <button class="btn btn-success">
+أضف للتقويم
+</button>
+
+        <button class="btn btn-primary">
+مشاركة
+</button>
+
+    </div>
+
+
+
+   <!-- Footer -->
+    <footer class="footer mt-5">
+        <p>© 2026 دليل الفعاليات - جميع الحقوق محفوظة</p>
+        <p>
+            اتصل بنا 09111122278+
+        </p>
+    </footer>
+
+
+    <script>
+        const eventsData = {
+
+            1: {
+                title:"الحفلةالموسيقية ",
+                image:"images/maxresdefault.jpg",
+                desc: " حفلة موسيقية  تضم أشهر الفنانين والموسيقين حيث سيتم تقديم فريق الجامعة الافتراضية الموسيقي بعد اتمام تحضيره الذي استغرق حوالي 6 شهور كل التوفيق في الظهور الاول .",
+                date: "15 يوليو 2026",
+                place: "دار الأوبرا في دمشق"
+            },
+
+            2: {
+                title: "تكنولوجيا",
+                image: "images/OIP (1).webp",
+                desc:  ".المسابقة المنظرة لعشاق التكنولوجيا والذكاء الصنعي مسابقة الروبوتات الاولى على مستوى سورياالتي تنظمها الجامعة الافتراضية بالتعاون مع الجمعيات السورية للذكاء الصنعي انضم وحول افكارك لواقع ",
+                date: "20 يونيو 2026",
+                place: "حلب"
+            },
+
+            3: {
+                title: "حدث ثقافي",
+                image: "images/703.jpeg",
+                desc: ".حفل افتتاح المعرض السنوي للكتاب في قمة تجمع نخبة الأدباء السوريين  كما سيخلل الحفل توقيع سلسلة جديدة لأهم الكتاب وتقديم مسابقات وجوائز للحضور ",
+                date: "1 اغسطس 2026",
+                place: "حمص_المركز الثافي"
+            },
+
+            4: {
+                title: "حدث فني",
+                image: "images/theater.rr.webp",
+                desc: " . عروض مسرحيةوفنية رائعة ومن على خشبة مسرح دمشق الثقافي يقدمها فرقة (الطلبة المسرحي)",
+                date: "10 يونيو 2026",
+                place: "دمشق"
+            },
+            5: {
+                title:"حدث رياضي",
+                image: "images/OIP.webp",
+                desc: " ئالرياضة غذاء للروح وصحة للجسد والعقل وهذا ما ينعكس على حياتك وسلوكك من هنا انطلقت فكرة المسابقة الرياضية التي سيتم تنظيمها في ثلاثة محافظات مع انتقال المراكز الاولى للمرحلة النهائية التي ستقام في العاصمة دمشق في موعد يحدد لاحقا لتحديد البطل كما سيحصل المراكز الثلاثة الاولى على جوائز مقدمة من الجامعة الافتراضية السورية.  ",
+                date: "30 مايو 2026",
+                place: "دمشق_حلب _حمص"
+            },
+            6: {
+                title: "الحدث السنوي 2026",
+                image: "images/OIP (2).webp",
+                desc: ". من دمشق  وعلى خشبة مسرح دار الاوبرا ستنضم الجامعة الافتراضية حفلها السنوي لتخريج الدفعة السابعة من طلاب هندسة المعلوماتية في حفل سيتم فيه  تكريم الاوائل والمتفوقين كما سيشهد الاحتفال الاعلان عن الفائز في مسابقة الروبرتات  ",
+                date: "19 سبتمبر 2026",
+                place: "دمشق"
+            }
+
+        };
+
+
+        const params =
+            new URLSearchParams(window.location.search);
+
+        const id = params.get("id");
+
+
+        if (eventsData[id]) {
+
+            document.getElementById("eventTitle").innerText =
+                eventsData[id].title;
+
+            document.getElementById("eventImage").src =
+                eventsData[id].image;
+
+            document.getElementById("eventDesc").innerText =
+                eventsData[id].desc;
+
+            document.getElementById("eventDate").innerText =
+                eventsData[id].date;
+
+            document.getElementById("eventPlace").innerText =
+                eventsData[id].place;
+
+        } else {
+
+            document.getElementById("eventTitle").innerText =
+                "الفعالية غير موجودة";
+
+        }
+    </script>
+ 
+
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>الفعاليات</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-white">دليل الفعاليات</a>
+
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+                <li class="nav-item"><a class="nav-link" href="events.html">الفعاليات</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">عن الدليل</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+
+        <h2 class="section-title">كل الفعاليات</h2>
+
+        <input type="text" id="search" class="form-control mb-4" placeholder="ابحث عن فعالية">
+          
+        <div class="row">
+            <div class="col-md-4 event-card">
+                <div class="card">
+                    <img src="images/maxresdefault.jpg">
+                    <div class="card-body">
+                        <h5>ترفيهي</h5>
+                        <p>حفلة موسيقية</p>
+                        <a href="event.html?id=1" class="btn btn-primary">التفاصيل</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="col-md-4 event-card">
+                <div class="card">
+                    <img src="images/OIP (1).webp">
+                    <div class="card-body">
+                        <h5>تكنولوجيا</h5>
+                         <p>مسابقة الربوتات  </p>
+                        <a href="event.html?id=2" class="btn btn-primary">التفاصيل</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 event-card">
+                <div class="card">
+                    <img src="images/703.jpeg">
+                    <div class="card-body">
+                        <h5>حدث ثقافي</h5>
+                         <p>معرض الكتاب السنوي </p>
+                        <a href="event.html?id=3" class="btn btn-primary">التفاصيل</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 event-card">
+                <div class="card">
+                    <img src="images/theater.rr.webp">
+                    <div class="card-body">
+                        <h5>حدث فني</h5>
+                        <p>عروض مسرحية </p>
+                        <a href="event.html?id=4" class="btn btn-primary">التفاصيل</a>
+                    </div>
+                </div>
+            </div>
+
+             <div class="col-md-4 event-card">
+                <div class="card">
+                    <img src="images/OIP.webp">
+                    <div class="card-body">
+                        <h5>حدث رياضي</h5>
+                        <p>مسابقة الرقم القياسي</p>
+                        <a href="event.html?id=5" class="btn btn-primary">التفاصيل</a>
+                    </div>
+                </div>
+            </div>
+          
+
+             <div class="col-md-4 event-card">
+                <div class="card">
+                    <img src="images/OIP (2).webp">
+                    <div class="card-body">
+                        <h5>الحدث السنوي2026 </h5>
+                        <p>  حفل تخريج طلاب الجامعة الافتراضية</p>
+                        <a href="event.html?id=5" class="btn btn-primary">التفاصيل</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+    </div>
+<!-- Footer -->
+    <footer class="footer mt-5">
+        <p>© 2026 دليل الفعاليات - جميع الحقوق محفوظة</p>
+        <p>
+            اتصل بنا 09111122278+
+        </p>
+    </footer>
+
+
+    <!-- JS -->
+    <script>
+        document.getElementById("search").addEventListener("keyup", function() {
+
+            let searchValue = this.value.toLowerCase();
+
+            let events = document.querySelectorAll(".event-card");
+
+            events.forEach(function(event) {
+
+                let text = event.textContent.toLowerCase();
+
+                if (text.includes(searchValue)) {
+                    event.style.display = "block";
+                } else {
+                    event.style.display = "none";
+                }
+
+            });
+
+        });
+    </script>
+
+     
+</body>
+
+
+</html>
